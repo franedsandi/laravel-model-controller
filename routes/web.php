@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Guest\PageController as PageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [PageController::class, 'index'] ) -> name('Home');
+Route::get('/movies', [PageController::class, 'movies'] ) -> name('Movies');
+Route::get('/contacts', [PageController::class, 'contacts']) -> name('Contacts');
