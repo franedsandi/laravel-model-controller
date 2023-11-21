@@ -12,10 +12,7 @@ class PageController extends Controller
         return view('home');
     }
     public function movies(){
-
         $movies = Movie::all();
-        dump($movies);
-
         return view('movies',compact ('movies'));
     }
     public function contacts(){
